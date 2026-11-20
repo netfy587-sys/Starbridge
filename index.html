@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Starbridge – Guides that connect you to better skills, money and study habits</title>
+<meta name="description" content="Starbridge publishes original guides on personal finance basics, career skills, studying, technology and home life, written to be clear, honest and useful.">
+<link rel="canonical" href="https://www.yourdomain.com/">
+<meta property="og:title" content="Starbridge">
+<meta property="og:description" content="Original guides on money basics, career skills, study habits and everyday technology.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+
+<!-- GOOGLE ADSENSE: paste your own code here after approval.
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+
+<style>
+:root{
+  --bg:#f3f4fa; --ink:#1c1a3d; --muted:#5a5877; --card:#ffffff; --line:#dcdcee;
+  --indigo:#26235a; --indigo-ink:#f3f2ff; --gold:#f3b33d; --gold-ink:#241800; --sky:#2f7fe0; --tint:#e8eafa;
+  --head:'Red Hat Display','Trebuchet MS',Arial,sans-serif;
+  --body:'Newsreader',Georgia,'Times New Roman',serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f0e26; --ink:#eeedff; --muted:#aaa8cc; --card:#1a1940; --line:#2d2b5c;
+    --indigo:#0a0920; --indigo-ink:#f3f2ff; --gold:#f3b33d; --gold-ink:#241800; --sky:#7db4ff; --tint:#22214d;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f0e26; --ink:#eeedff; --muted:#aaa8cc; --card:#1a1940; --line:#2d2b5c;
+  --indigo:#0a0920; --indigo-ink:#f3f2ff; --gold:#f3b33d; --gold-ink:#241800; --sky:#7db4ff; --tint:#22214d;
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.1rem;line-height:1.7}
+a{color:var(--sky)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0 0 .55em;font-weight:700}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+
+/* Header */
+.head{background:var(--indigo);color:var(--indigo-ink);padding-top:env(safe-area-inset-top,0px)}
+.head .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:.9rem;padding-bottom:.9rem}
+.brand{display:flex;align-items:center;gap:.55rem;color:var(--indigo-ink);text-decoration:none;font-family:var(--head);font-weight:900;font-size:1.4rem;letter-spacing:-.01em}
+.brand svg{width:36px;height:36px}
+.head nav ul{display:flex;flex-wrap:wrap;gap:.3rem 1.3rem;list-style:none;margin:0;padding:0;font-family:var(--head);font-weight:500;font-size:.95rem}
+.head nav a{color:var(--indigo-ink);text-decoration:none;padding:.2rem 0;border-bottom:2px solid transparent;opacity:.9}
+.head nav a:hover{border-color:var(--gold);opacity:1}
+
+/* Hero with bridge */
+.hero{background:linear-gradient(180deg,var(--indigo) 0%,#3b2f86 100%);color:var(--indigo-ink);position:relative;overflow:hidden}
+.hero .wrap{padding-top:3rem;padding-bottom:9rem;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.2rem,5.6vw,4rem);font-weight:900;max-width:15ch;margin-bottom:.4em}
+.hero p{max-width:52ch;color:#d3d0f7;margin:0 0 1.5rem}
+.btn{display:inline-block;background:var(--gold);color:var(--gold-ink);font-family:var(--head);font-weight:700;text-decoration:none;padding:.8rem 1.5rem;border-radius:6px}
+.btn:hover{filter:brightness(1.07)}
+.bridge{position:absolute;left:0;right:0;bottom:0;width:100%;height:130px;display:block}
+.bridge .deck{fill:var(--bg)} .bridge .cable{stroke:var(--gold);fill:none} .bridge .star{fill:var(--gold)}
+.hero::after{content:"";position:absolute;top:2.2rem;right:8%;width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:-120px 40px 0 #fff8,-260px -10px 0 #fff6,60px 90px 0 #fff8,-60px 150px 0 #fff6,-340px 110px 0 #fff8}
+
+/* Topic tabs */
+.tabs{display:flex;gap:.6rem;flex-wrap:wrap;padding:1.2rem 0 .4rem}
+.tab{font-family:var(--head);font-weight:700;font-size:.88rem;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:.4rem .9rem;color:var(--ink)}
+
+/* Ads */
+.ad-slot{margin:1.5rem 0;text-align:center}
+.ad-slot small{display:block;font-family:var(--head);font-size:.72rem;color:var(--muted);margin-bottom:.3rem}
+.ad-box{min-height:100px;border:1px dashed var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;font-family:var(--head)}
+
+/* Journal feed with date column */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:2.4rem;padding:1rem 0 2rem}
+.feed-title{font-size:1.5rem;margin:1rem 0 .4rem}
+.entry{display:grid;grid-template-columns:78px minmax(0,1fr);gap:1.2rem;padding:1.5rem 0;border-bottom:1px solid var(--line)}
+.date{font-family:var(--head);font-weight:900;text-align:center;line-height:1.05;border-top:4px solid var(--gold);background:var(--card);padding:.5rem .2rem;border-radius:0 0 8px 8px;height:fit-content}
+.date b{display:block;font-size:1.6rem}
+.date span{font-size:.75rem;font-weight:700;color:var(--muted)}
+.entry h3{font-size:1.4rem;margin-bottom:.25rem}
+.entry h3 a{color:var(--ink);text-decoration:none}
+.entry h3 a:hover{color:var(--sky);text-decoration:underline}
+.cat{font-family:var(--head);font-weight:700;font-size:.82rem;color:var(--sky)}
+.meta{font-family:var(--head);font-size:.8rem;color:var(--muted);margin:0 0 .5rem}
+.entry p{margin:.2rem 0 .6rem}
+.more{font-family:var(--head);font-weight:700;font-size:.92rem}
+
+/* Sidebar */
+aside .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.3rem;margin-bottom:1.3rem}
+aside h2{font-size:1.05rem}
+aside ol{margin:0;padding-left:1.2rem}
+aside li{margin:.5rem 0;font-size:1rem}
+aside ul{list-style:none;margin:0;padding:0}
+aside ul li{margin:.35rem 0}
+aside .sticky{position:sticky;top:calc(env(safe-area-inset-top,0px) + 1rem)}
+
+/* About / disclaimer */
+.band{background:var(--tint);padding:2.6rem 0;margin-top:1rem}
+.cols{display:grid;grid-template-columns:1fr 1.3fr;gap:2.4rem;align-items:start}
+.cols h2{font-size:1.4rem}
+.disclaimer{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:10px;padding:1.4rem 1.7rem}
+.disclaimer h3{font-size:.95rem;margin:1rem 0 .15rem}
+.disclaimer h3:first-of-type{margin-top:0}
+.disclaimer p{margin:.1rem 0 .5rem;font-size:1rem}
+
+/* Footer */
+footer{background:var(--indigo);color:var(--indigo-ink);border-top:5px solid var(--gold);padding:2.4rem 0 2.6rem;font-size:1rem}
+footer a{color:var(--indigo-ink)}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:1.8rem}
+footer h3{font-size:1rem}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:.3rem 0}
+.copy{margin-top:1.6rem;color:#b8b5e8;font-size:.9rem}
+
+/* Consent */
+#consent{position:fixed;left:1rem;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));max-width:620px;margin:0 auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;box-shadow:0 8px 30px rgba(0,0,0,.28);display:none;z-index:30;font-size:.98rem;line-height:1.5}
+#consent.show{display:block}
+#consent button{margin-top:.7rem;border:0;cursor:pointer;font-size:.92rem}
+
+@media (max-width:900px){
+  .layout,.cols,.fgrid{grid-template-columns:1fr}
+  aside .sticky{position:static}
+  .hero .wrap{padding-bottom:7rem}
+}
+@media (max-width:520px){
+  .entry{grid-template-columns:1fr;gap:.6rem}
+  .date{display:flex;gap:.4rem;align-items:baseline;border-radius:6px;padding:.3rem .7rem;width:fit-content}
+  .date b{font-size:1.1rem}
+}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="wrap">
+    <a class="brand" href="starbridge.html" aria-label="Starbridge home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 30Q20 4 37 30" fill="none" stroke="#f3b33d" stroke-width="3" stroke-linecap="round"/><path d="M3 33h34" stroke="#f3f2ff" stroke-width="3" stroke-linecap="round"/><path d="M20 11l1.8 3.6 4 .6-2.9 2.8.7 4L20 20.100l-3.600 1.900.7-4-2.900-2.800 4-.6z" fill="#f3b33d"/></svg>
+      Starbridge
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="starbridge.html">Home</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Build the bridge to your next skill.</h1>
+      <p>Starbridge publishes original guides on money basics, career skills, study habits and everyday technology. Each article is written to help you take one clear step forward.</p>
+      <a class="btn" href="#articles">Start reading</a>
+    </div>
+    <svg class="bridge" viewBox="0 0 1200 130" preserveAspectRatio="none" aria-hidden="true">
+      <path class="cable" stroke-width="4" d="M0 120Q300 -10 600 100Q900 -10 1200 120"/>
+      <g stroke="#f3b33d" stroke-width="2" opacity=".7"><path d="M150 70v60M300 52v78M450 70v60M600 100v30M750 70v60M900 52v78M1050 70v60"/></g>
+      <path class="deck" d="M0 118h1200v12H0z"/>
+      <path class="star" d="M600 24l6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2z"/>
+    </svg>
+  </section>
+
+  <div class="wrap">
+    <div class="tabs" aria-label="Topics">
+      <span class="tab">Money basics</span><span class="tab">Career skills</span><span class="tab">Study habits</span><span class="tab">Technology</span><span class="tab">Home and living</span>
+    </div>
+
+    <!-- Ad slot 1 -->
+    <div class="ad-slot" aria-label="Advertisement">
+      <small>Advertisement</small>
+      <div class="ad-box">Ad space</div>
+    </div>
+
+    <div class="layout">
+      <div>
+        <h2 class="feed-title" id="articles">Latest from Starbridge</h2>
+
+        <article class="entry">
+          <div class="date"><b>18</b><span>Nov 2026</span></div>
+          <div>
+            <span class="cat">Money basics</span>
+            <h3><a href="#">A beginner’s guide to making and following a monthly budget</a></h3>
+            <p class="meta">By the Starbridge Team · 9 min read</p>
+            <p>A budget is simply a plan for your money. We show a three-step method: list your fixed costs, set a small savings target and give yourself a flexible amount to spend, then review it once a month.</p>
+            <a class="more" href="#">Read the guide</a>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="date"><b>12</b><span>Nov 2026</span></div>
+          <div>
+            <span class="cat">Career skills</span>
+            <h3><a href="#">How to write a clear, honest resume in one page</a></h3>
+            <p class="meta">By the Starbridge Team · 8 min read</p>
+            <p>Hiring managers skim quickly. Learn how to lead with results, choose which experience to include and keep the layout simple enough for both people and screening software.</p>
+            <a class="more" href="#">Continue reading</a>
+          </div>
+        </article>
+
+        <!-- In-feed ad -->
+        <div class="ad-slot" aria-label="Advertisement">
+          <small>Advertisement</small>
+          <div class="ad-box">Ad space</div>
+        </div>
+
+        <article class="entry">
+          <div class="date"><b>06</b><span>Nov 2026</span></div>
+          <div>
+            <span class="cat">Study habits</span>
+            <h3><a href="#">Spaced repetition: remember more with shorter study sessions</a></h3>
+            <p class="meta">By the Starbridge Team · 7 min read</p>
+            <p>Reviewing material at growing intervals helps memory stick. This guide explains the idea and shows how to set up a simple schedule with paper cards or a free app.</p>
+            <a class="more" href="#">Continue reading</a>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="date"><b>30</b><span>Oct 2026</span></div>
+          <div>
+            <span class="cat">Technology</span>
+            <h3><a href="#">Strong passwords made easy: a practical guide to password managers</a></h3>
+            <p class="meta">By the Starbridge Team · 7 min read</p>
+            <p>Reusing passwords is risky. Find out how password managers work, what to look for when choosing one and how to switch without losing access to your accounts.</p>
+            <a class="more" href="#">Continue reading</a>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="date"><b>22</b><span>Oct 2026</span></div>
+          <div>
+            <span class="cat">Home and living</span>
+            <h3><a href="#">Simple ways to cut your home electricity use</a></h3>
+            <p class="meta">By the Starbridge Team · 6 min read</p>
+            <p>Small changes, such as efficient lighting, smart use of fans and unplugging idle devices, add up over time. Here is what actually makes a difference and what barely matters.</p>
+            <a class="more" href="#">Continue reading</a>
+          </div>
+        </article>
+      </div>
+
+      <aside aria-label="Sidebar">
+        <div class="sticky">
+          <div class="box">
+            <h2>Start here</h2>
+            <ol>
+              <li>Pick one topic above that fits your goal.</li>
+              <li>Read one guide and try one idea this week.</li>
+              <li>Come back for the next step.</li>
+            </ol>
+          </div>
+          <!-- Sidebar ad -->
+          <div class="ad-slot" aria-label="Advertisement">
+            <small>Advertisement</small>
+            <div class="ad-box" style="min-height:250px">Ad space</div>
+          </div>
+          <div class="box">
+            <h2>Legal</h2>
+            <ul>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms and Conditions</a></li>
+              <li><a href="#disclaimer">Disclaimer</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap cols">
+      <section id="about">
+        <h2>About Starbridge</h2>
+        <p>Starbridge is an independent educational blog. Our team writes every article from scratch, checks facts against reliable sources and updates guides when things change.</p>
+        <p>The site is supported by advertising, which keeps our guides free for everyone. Ads never decide what we publish. Reach us at <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a>.</p>
+      </section>
+
+      <section id="disclaimer">
+        <h2>Disclaimer</h2>
+        <div class="disclaimer" role="note">
+          <h3>General information only</h3>
+          <p>Content on Starbridge is provided for general information and education. We aim to keep it accurate and current, but we cannot guarantee it is complete, error-free or suitable for your situation.</p>
+          <h3>Not financial, legal or professional advice</h3>
+          <p>Articles on money, careers, technology or any other subject are not financial, investment, legal or professional advice. Please speak with a qualified professional before making decisions, and rely on official sources for rules, rates and regulations.</p>
+          <h3>Advertising and cookies</h3>
+          <p>Starbridge shows ads served by Google AdSense and possibly other partners, who may use cookies to personalise ads based on your visits to this and other websites. See our <a href="privacy.html">Privacy Policy</a> for details. Ads are not endorsements.</p>
+          <h3>External links</h3>
+          <p>We may link to third-party sites and are not responsible for their content, services or privacy practices.</p>
+          <h3>Changes</h3>
+          <p>We may update this disclaimer at any time. By using this site you agree to our <a href="terms.html">Terms and Conditions</a>.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h3>Starbridge</h3>
+        <p>Original guides that help you take the next clear step with money, skills, study and technology.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="starbridge.html">Home</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms and Conditions</a></li>
+          <li><a href="#disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© <span id="yr">2026</span> Starbridge. All rights reserved. Contact: <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a></div>
+  </div>
+</footer>
+
+<div id="consent" role="dialog" aria-live="polite" aria-label="Cookie notice">
+  We use cookies to run this site and to show ads. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.
+  <br><button class="btn" id="consent-ok" type="button">Got it</button>
+</div>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var box = document.getElementById('consent'), ok = false;
+  try { ok = localStorage.getItem('starbridge-consent') === '1'; } catch(e) {}
+  if(!ok) box.classList.add('show');
+  document.getElementById('consent-ok').addEventListener('click', function(){
+    box.classList.remove('show');
+    try { localStorage.setItem('starbridge-consent','1'); } catch(e) {}
+  });
+})();
+</script>
+</body>
+</html>
